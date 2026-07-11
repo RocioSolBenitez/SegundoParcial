@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="es">
+
+   <head>
+	  <meta charset="utf-8">
+	  <title>Gestión - Laurie Anderson</title>
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Abel&display=swap" rel="stylesheet">
+      <link href="css/estilos.css" rel="stylesheet">
+   </head>
+
+   <body>
+    <div id="contenedor">
+    <header>
+        <h1>Laurie Anderson</h1>
+        <p>Performance, tecnología y narración en el arte contemporáneo</p>
+        <hr>
+    <nav>
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="obras.html">Obras</a></li>
+            <li><a href="gestion.html">Gestión</a></li>
+        </ul>
+    </nav>
+    <hr>
+</header>
+
+<main>
+    <h2>Repositorio de obras musicales</h2>
+<p>
+    Ingrese la información solicitada. Primero complete la configuración del repositorio. Luego cargue todas las obras y finalmente 
+    calcule los resultados.
+</p>
+
+<section>
+    <form>
+    <h2>Configuración</h2>
+
+    <label for="cantidad">Cantidad de obras</label>
+    <input type="number" name="cantidad" id="cantidad">
+
+    <label for="tiempo">Tiempo de transferencia por MB (milisegundos)</label>
+    <input type="number" name="tiempo" id="tiempo">
+
+    <label for="costo">Costo mensual por MB</label>
+    <input type="number" name="costo" id="costo">
+
+    <button type="button">Guardar configuración</button>
+    </form>
+</section>
+
+<hr>
+
+<section>
+    <h2>Ingreso de obras</h2>
+
+<label for="nombre">Nombre de la obra</label>
+<input type="text" name="nombre" id="nombre">
+
+<label for="duracion">Duración (minutos)</label>
+<input type="number" name="duracion" id="duracion">
+
+<label for="peso">Peso del archivo (MB)</label>
+<input type="number" name="peso" id="peso">
+
+<button type="button">Agregar obra</button>
+
+</section>
+
+<hr>
+
+<section>
+    <h2>Resultados</h2>
+
+<button type="button">Calcular resultados</button>
+
+<div id="resultados">
+
+<p>Aquí aparecerán los resultados.</p>
+
+</div>
+
+<button type="button">Reiniciar</button>
+</section>    
+</main>
+
+<footer>
+    <address><p>Para contactarse escribir a <a href="mailto: laurie@artedigital.com">laurie@artedigital.com</a></p></address>
+</footer>
+</div>
+   </body>
+   
+</html>

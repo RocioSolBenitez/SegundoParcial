@@ -1,3 +1,173 @@
 body {
     background-image: url(../img/fondo.png);
+    display: flex;
+    justify-content: center;
+}
+
+#contenedor{
+    width: 76%;
+    max-width: 960px;
+    padding: 1.8rem;
+    background-color: steelblue;
+}
+
+header h1 {
+    text-align: center;
+    color: #06283D;
+    font-family: 'Abel', sans-serif;
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+}
+
+header p {
+    text-align: center;
+    color: white;
+    font-size: 1.5rem;
+}
+
+nav ul {
+    list-style: none;
+    text-align: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 0 2rem;
+    font-size: 1.5rem;
+}
+
+nav ul li a{
+    text-decoration: none; /*le saque las lineas*/  
+}
+
+nav ul li a:link {
+    color: white;
+} 
+
+nav ul li a:visited {
+    color: white;
+} /*los cambie a color blanco*/
+
+nav ul li a:hover {
+    color: lightblue;
+} /*cuando paso el mouse, cambian de color a celeste claro*/
+
+nav a:active {
+    color: darkblue;
+} /*cuando hago click se tendria que poner de color azul*/
+
+/*Index - primera pagina*/
+img {
+    width: 75%;
+    display:block;
+    margin: auto;
+    padding-top: 1rem;
+}
+
+blockquote {
+    text-align: center;
+    color: white;
+    font-size: 1.3rem;
+    margin-bottom: 3rem;
+}
+
+.tresColumnas{
+    display:flex;
+    justify-content:space-between;
+}
+
+.tresColumnas article{
+    width:29%;
+    background-color: #0B2C41;
+    padding:1rem;
+    border-radius: 0.5rem;
+}
+
+p {
+    color: white;
+    font-size: 1.1rem;
+    line-height: 1.5rem;
+}
+
+section article h2 {
+    color: #DFF6FF;
+    font-family: 'Abel', sans-serif;
+    border-bottom: 0.2rem solid #DFF6FF;
+}
+
+section h2 {
+    color: #06283D;
+    font-family: 'Abel', sans-serif;
+    font-size: 1.7rem;
+    border-bottom: 0.2rem solid #06283D;
+    text-align: center;
+}
+
+address p {
+    color: white;
+    font-size: 1.5rem;
+    text-align: center;
+    padding-top: 2rem;
+    font-weight: bold;
+}
+
+address p a {
+    color: white;
+}
+
+address p a:hover {
+    color: lightblue;
+}
+
+/*Obras - segunda pagina*/
+.dosColumnas{
+    display:flex;
+    justify-content:space-between;
+}
+
+.izquierda{
+    width:70%;
+}
+
+.derecha{
+    width:30%;
+}
+
+main h2 {
+    color: #06283D;
+    font-family: 'Abel', sans-serif;
+    font-size: 1.7rem;
+    border-bottom: 0.2rem solid #06283D;
+}
+
+aside ul li {
+    color: white;
+    font-size: 1.1rem;
+    line-height: 1.5rem;
+}
+
+/*Gestion*/
+button{
+    padding:.8rem;
+    margin-top:1rem;
+    margin-bottom:1rem;
+}
+
+label{
+    display:block;
+    margin-top:1rem;
+}
+
+input{
+    width:100%;
+    padding:.6rem;
+    margin-top:.5rem;
+}
+
+#resultados{
+    margin-top:2rem;
+    padding:1rem;
+    background-color: #06283D;
 }
