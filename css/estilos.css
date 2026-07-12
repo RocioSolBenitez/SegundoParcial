@@ -63,7 +63,6 @@ img {
     width: 75%;
     display:block;
     margin: auto;
-    padding-top: 1rem;
 }
 
 blockquote {
@@ -111,6 +110,9 @@ address p {
     text-align: center;
     padding-top: 2rem;
     font-weight: bold;
+    margin-top:2rem;
+    padding: 2rem;
+    background-color: #06283D;
 }
 
 address p a {
@@ -148,6 +150,19 @@ aside ul li {
     line-height: 1.5rem;
 }
 
+#galeria article h3{
+    text-align: center;
+    font-size: 1.5rem;
+    margin-bottom: 0.3rem;
+}
+
+#galeria article p {
+    text-align: center;
+    padding-bottom: 2rem;
+    font-size: 1.2rem;
+    margin-top: 0;
+}
+
 /*Gestion*/
 button{
     padding:.8rem;
@@ -171,3 +186,5 @@ input{
     padding:1rem;
     background-color: #06283D;
 }
+
+
