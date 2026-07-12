@@ -142,7 +142,7 @@ function calcular(){
     let presupuesto = pesoTotal * costoMensual * 12;
 
     resultados.innerHTML =
-    "<h2>Resultados</h2>" +
+    "<h4>Resultados</h4>" +
     "<p>Duración total: " + duracionTotal + " minutos</p>" +
     "<p>Duración promedio: " + promedio + " minutos</p>" +
     "<p>Obra de mayor duración: " + nombreMayor + "</p>" +
