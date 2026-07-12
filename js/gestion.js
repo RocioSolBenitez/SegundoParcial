@@ -39,76 +39,81 @@ function configurar(){
     cantidadObras = Number(textoCantidad.value);
     tiempoTransferencia = Number(textoTiempo.value);
     costoMensual = Number(textoCosto.value);
+
+    if(cantidadObras <= 0){
+        alert("Ingrese una cantidad de obras válida.");
+        return;
+    }
+
+    if(tiempoTransferencia <= 0){
+        alert("Ingrese un tiempo válido.");
+        return;
+    }
+
+    if(costoMensual <= 0){
+        alert("Ingrese un costo válido.");
+        return;
+    }
+
+    textoNombre.disabled = false;
+    textoDuracion.disabled = false;
+    textoPeso.disabled = false;
+    botonAgregar.disabled = false;
+
+    textoCantidad.disabled = true;
+    textoTiempo.disabled = true;
+    textoCosto.disabled = true;
+    botonConfigurar.disabled = true;
+
 }
-
-if(cantidadObras <= 0){
-    alert("Ingrese una cantidad de obras válida.");
-    return;
-}
-
-if(tiempoTransferencia <= 0){
-    alert("Ingrese un tiempo válido.");
-    return;
-}
-
-if(costoMensual <= 0){
-    alert("Ingrese un costo válido.");
-    return;
-}
-
-textoNombre.disabled = false;
-textoDuracion.disabled = false;
-textoPeso.disabled = false;
-botonAgregar.disabled = false;
-
-textoCantidad.disabled = true;
-textoTiempo.disabled = true;
-textoCosto.disabled = true;
-botonConfigurar.disabled = true;
 
 //Segunda función
 function agregarObra(){
     let nombre = textoNombre.value;
     let duracion = Number(textoDuracion.value);
     let peso = Number(textoPeso.value);
-}
 
-if(nombre == ""){
-    alert("Ingrese el nombre de la obra.");
-    return;
-}
+    if(nombre == ""){
+        alert("Ingrese el nombre de la obra.");
+        return;
+    }
 
-if(duracion <= 0){
-    alert("Ingrese una duración válida.");
-    return;
-}
+    if(duracion <= 0){
+        alert("Ingrese una duración válida.");
+        return;
+    }
 
-if(peso <= 0){
-    alert("Ingrese un peso válido.");
-    return;
-}
+    if(peso <= 0){
+        alert("Ingrese un peso válido.");
+        return;
+    }
 
-//Objeto
-let obra = {
-    nombre: nombre,
-    duracion: duracion,
-    peso: peso
-};
+    let obra = {
+        nombre: nombre,
+        duracion: duracion,
+        peso: peso
+    };
 
-repositorio.push(obra);
+    repositorio.push(obra);
 
-contador++;
+    contador++;
 
-textoNombre.value = "";
-textoDuracion.value = "";
-textoPeso.value = "";
+    textoNombre.value = "";
+    textoDuracion.value = "";
+    textoPeso.value = "";
 
-if(contador == cantidadObras){
-    textoNombre.disabled = true;
-    textoDuracion.disabled = true;
-    textoPeso.disabled = true;
-    botonAgregar.disabled = true;
-    botonCalcular.disabled = false;
+    if(contador == cantidadObras){
+
+        textoNombre.disabled = true;
+        textoDuracion.disabled = true;
+        textoPeso.disabled = true;
+
+        botonAgregar.disabled = true;
+
+        botonCalcular.disabled = false;
+
+    }
+
 }
 
 //Tercera función
@@ -117,21 +122,76 @@ function calcular(){
     let pesoTotal = 0;
     let mayorDuracion = 0;
     let nombreMayor = "";
+    let pesoMayor = 0;
+
+    for(let i = 0; i < repositorio.length; i++){
+
+        duracionTotal += repositorio[i].duracion;
+        pesoTotal += repositorio[i].peso;
+
+        if(repositorio[i].duracion > mayorDuracion){
+
+            mayorDuracion = repositorio[i].duracion;
+            nombreMayor = repositorio[i].nombre;
+            pesoMayor = repositorio[i].peso;
+        }
+    }
+
+    let promedio = duracionTotal / repositorio.length;
+    let tiempoDescarga = pesoMayor * tiempoTransferencia;
+    let presupuesto = pesoTotal * costoMensual * 12;
+
+    resultados.innerHTML =
+    "<h2>Resultados</h2>" +
+    "<p>Duración total: " + duracionTotal + " minutos</p>" +
+    "<p>Duración promedio: " + promedio + " minutos</p>" +
+    "<p>Obra de mayor duración: " + nombreMayor + "</p>" +
+    "<p>Tiempo de transferencia: " + tiempoDescarga + " ms</p>" +
+    "<p>Presupuesto anual: $" + presupuesto + "</p>";
+
+    botonCalcular.disabled = true;
+    botonReiniciar.disabled = false;
+
 }
 
-for(let i = 0; i < obras.length; i++){
-    duracionTotal = duracionTotal + obras[i].duracion;
-    pesoTotal = pesoTotal + obras[i].peso;
-    
-    if(obras[i].duracion > mayorDuracion){
+//Ultima función
+function reiniciar(){
+    //Vaciar el array
+    repositorio = [];
 
-    mayorDuracion = obras[i].duracion;
+    //Reiniciar contador
+    contador = 0;
 
-    nombreMayor = obras[i].nombre;
+    //Limpiar configuración
+    textoCantidad.value = "";
+    textoTiempo.value = "";
+    textoCosto.value = "";
+
+    //Limpiar datos de las obras
+    textoNombre.value = "";
+    textoDuracion.value = "";
+    textoPeso.value = "";
+
+    //Borrar resultados
+    resultados.innerHTML = "";
+
+    //Habilitar configuración
+    textoCantidad.disabled = false;
+    textoTiempo.disabled = false;
+    textoCosto.disabled = false;
+
+    botonConfigurar.disabled = false;
+
+    //Deshabilitar ingreso de obras
+    textoNombre.disabled = true;
+    textoDuracion.disabled = true;
+    textoPeso.disabled = true;
+
+    botonAgregar.disabled = true;
+    botonCalcular.disabled = true;
+    botonReiniciar.disabled = true;
 
 }
-}
-
 
 
 

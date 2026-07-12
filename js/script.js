@@ -1,5 +1,4 @@
 //Array de obras
-
 let obras = [
 
     {
@@ -50,15 +49,11 @@ let boton = document.querySelector("#cambiarDiseno");
 boton.addEventListener("click", cambiarDiseno);
 
 function cambiarDiseno(){
-
     let imagenes = document.querySelectorAll("#galeria img");
 
     for(let i = 0; i < 5; i++){
 
         imagenes[i].style.width = "70%";
-
         imagenes[i].style.border = "0.5rem solid white";
-
     }
-
 }

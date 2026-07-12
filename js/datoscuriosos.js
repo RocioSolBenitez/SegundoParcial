@@ -13,7 +13,6 @@ let datos = [
 ];
 
 let boton = document.querySelector("#botonDato");
-
 let parrafo = document.querySelector("#datosCuriosos");
 
 boton.addEventListener("click", mostrarDato);
